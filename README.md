@@ -1,4 +1,5 @@
 # etag-generator
+![CI](https://github.com/FerrowAI/etag-generator/actions/workflows/ci.yml/badge.svg)
 
 ETag generation and If-None-Match comparison for HTTP caching per RFC 7232.
 
