@@ -1,0 +1,29 @@
+# etag-generator
+
+> ETag generation and If-None-Match comparison for RFC 7232 HTTP caching.
+
+Provides strong ETags (SHA256 hash of content), weak ETags (size+mtime combo), and RFC 7232 conditional request evaluation. Includes If-None-Match header parsing with W/ prefix awareness and * wildcard matching. decide() helper returns 200/304 status and caching headers. fileETag() async helper generates weak tags from file stats.
+
+## API
+
+```typescript
+function strongETag(content: string | Buffer): string
+function weakETag(size: number, mtime: number): string
+function ifNoneMatch(header: string | undefined, etag: string): boolean
+function decide(reqHeaders, etag, lastModified?): { status: 200|304, headers }
+async function fileETag(filePath: string): string
+```
+
+## Install
+
+```bash
+npm install etag-generator
+```
+
+## Limits
+
+- Strong ETags first 27 chars of SHA256 (collision risk < 10^-10 for same size)
+- No If-Modified-Since handling (separate Last-Modified logic)
+- fileETag() is async (fs.stat required)
+
+Part of the Ferrow open-source toolkit: https://github.com/Ruzylo-cloud/ferrow-toolkit — sponsored by https://ferrow.ai
