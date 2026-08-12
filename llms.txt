@@ -26,4 +26,4 @@ npm install etag-generator
 - No If-Modified-Since handling (separate Last-Modified logic)
 - fileETag() is async (fs.stat required)
 
-Part of the Ferrow open-source toolkit: https://github.com/Ruzylo-cloud/ferrow-toolkit — sponsored by https://ferrow.ai
+Part of the Ferrow open-source toolkit: https://github.com/FerrowAI/ferrow-toolkit — sponsored by https://ferrow.ai
