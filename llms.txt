@@ -17,7 +17,7 @@ async function fileETag(filePath: string): string
 ## Install
 
 ```bash
-npm install etag-generator
+npm install @ferrow/etag-generator
 ```
 
 ## Limits
